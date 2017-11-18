@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="col-xs-12 col-sm-12 col-md-8">
+      <h2><%=@artist.name%></h2>
+      <h3>Albums(<%= @artist.albums.size%>)</h3><br>
+      <div class="row">
+        <% @artist.albums.each do |album| %>
+          <div class=" col-xs-6 col-sm-4 col-md-3">
+            <div class="thumbnail">
+              <img src="<%= album.image_url %>" alt="<%= album.name %>">
+              <div class="caption">
+                <h4><%= album.name %></h4>
+                <h6><%= album.released_at %></h6>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-xs-0 col-sm-0 col-md-4">
+      <img class="img_artist_albums" src="<%= @artist.image_url %>" alt="<%= @artist.name %>">
+    </div>
+
+  </div>
+
+</div>
